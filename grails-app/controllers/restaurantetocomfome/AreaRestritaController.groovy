@@ -1,11 +1,14 @@
 package restaurantetocomfome
 
+
+
 class AreaRestritaController {
 	
 	def springSecurityService;
 	
     def index() {
 		
+		render(view: "/areaRestrita/logar");
 	}
 	
 	def logar(){
@@ -16,8 +19,9 @@ class AreaRestritaController {
 	def admin(){
 		
 		String usuario = springSecurityService.principal.username;
+		//println usuario;
 		
-		render(view: "/arearestrita/admin", model: [usuario: usuario]);
+		render(view:"/areaRestrita/admin", model:[usuario: usuario]);
 	}
 	
 	def logout(){
